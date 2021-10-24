@@ -2,18 +2,18 @@ package tests.UI;
 
 import org.junit.Before;
 import org.junit.Test;
-import pages.LoginPageObject;
+import pages.LoginPage;
 
 
-public class LoginPageTest extends BaseTest {
+public class LoginTest extends BaseTest {
 
 
-    private LoginPageObject loginPage;
+    private LoginPage loginPage;
 
     @Before
     public void setUp() {
 
-        loginPage = new LoginPageObject(driver);
+        loginPage = new LoginPage(driver);
     }
 
     @Test
