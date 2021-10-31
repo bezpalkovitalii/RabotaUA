@@ -19,7 +19,7 @@ public class UserPage extends BasePage {
     }
 
     public CreateCVMainInformationPage createCV(){
-        waitFor10.until(ExpectedConditions.visibilityOf(driver.findElement(createCVButton)));
+        //waitFor10.until(ExpectedConditions.visibilityOf(driver.findElement(createCVButton)));
         driver.findElement(createCVButton).click();
         return new CreateCVMainInformationPage(driver);
     }

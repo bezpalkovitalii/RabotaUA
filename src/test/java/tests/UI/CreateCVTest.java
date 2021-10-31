@@ -21,7 +21,9 @@ public class CreateCVTest extends BaseTest{
                 .openUserPage()
                 .createCV()
                 .inputMainInformation("Иван", "Иванов")
-                .inputPhoneNumber("636385322");
+                .inputPhoneNumber("636385322")
+                .citySelection()
+                .inputDayOfBirth("11", "1990");
     }
 
 }
