@@ -13,7 +13,7 @@ public class HomePage extends BasePage{
 
     public LoginPage openLoginPage(){
 
-        waitFor10.until(ExpectedConditions.visibilityOf(driver.findElement(enterButton)));
+        waitFor10.until(ExpectedConditions.elementToBeClickable(driver.findElement(enterButton)));
         driver.findElement(enterButton).click();
 
         return new LoginPage(driver);

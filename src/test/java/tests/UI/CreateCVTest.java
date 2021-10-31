@@ -22,8 +22,10 @@ public class CreateCVTest extends BaseTest{
                 .createCV()
                 .inputMainInformation("Иван", "Иванов")
                 .inputPhoneNumber("636385322")
-                .citySelection()
-                .inputDayOfBirth("11", "1990");
+                .citySelection("Киев")
+                .inputDayOfBirth("11", "1990")
+                .clickNextStepButton()
+                .fillWantedPosition("Middle QA Engineer");
     }
 
 }

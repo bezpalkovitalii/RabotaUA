@@ -14,18 +14,19 @@ public class CreateCVMainInformationPage extends BasePage {
     private final By fieldFirstName = By.xpath("//input[@id = 'firstname_field']");
     private final By fieldLastName = By.xpath("//input[@id = 'lastname_field']");
     private final By fieldPhoneNumber = By.xpath("//input[@id = 'phone_field']");
-    private final By fieldCity = By.xpath("//label[@for = 'city_field_main']");
-    private final By selectCity = By.xpath("//*[@id='ui-id-11825']");
+    private final By fieldCity = By.xpath("//input[@id='city_field_main']");
     private final By fieldDay = By.xpath("//input[@id = 'birth_day_field']");
     private final By fieldMonth = By.xpath("//select[@id = 'birth_month_field']");
     private final By selectMonth = By.xpath("//*[@id='birth_month_field']/option[5]");
-    private final By fieldYear = By.xpath("//label[@for = 'birth_year_field']");
+    private final By fieldYear = By.xpath("//input[@id='birth_year_field']");
+    private final By nextStepButton = By.xpath("//body/form[@id='aspnetForm']/div[@id='wizard_mount']/div[1]/div[1]/div[2]/div[1]/div[1]/div[7]/a[1]");
+
 
 
 
     public CreateCVMainInformationPage inputMainInformation(String firstName, String lastName) {
 
-        waitFor10.until(ExpectedConditions.visibilityOf(driver.findElement(fieldFirstName)));
+        //waitFor10.until(ExpectedConditions.visibilityOf(driver.findElement(fieldFirstName)));
         driver.findElement(fieldFirstName).sendKeys(firstName);
         driver.findElement(fieldLastName).sendKeys(lastName);
         return this;
@@ -36,9 +37,8 @@ public class CreateCVMainInformationPage extends BasePage {
         return this;
     }
 
-    public CreateCVMainInformationPage citySelection (){
-        driver.findElement(fieldCity).click();
-        driver.findElement(selectCity).click();
+    public CreateCVMainInformationPage citySelection (String city){
+        driver.findElement(fieldCity).sendKeys(city);
         return this;
     }
 
@@ -47,9 +47,12 @@ public class CreateCVMainInformationPage extends BasePage {
         driver.findElement(fieldMonth).click();
         driver.findElement(selectMonth).click();
         driver.findElement(fieldYear).sendKeys(year);
-
         return this;
+    }
 
+    public CreateCVDesiredPositionPage clickNextStepButton(){
+        driver.findElement(nextStepButton).click();
+        return new CreateCVDesiredPositionPage(driver);
     }
 
 

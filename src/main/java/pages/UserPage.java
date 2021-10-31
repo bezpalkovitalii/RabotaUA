@@ -10,16 +10,15 @@ public class UserPage extends BasePage {
     }
 
     private final By logOutButton = By.xpath("//span[contains(text(), 'Вийти з акаунту')]");
-    private final By createCVButton = By.xpath("//*[@id=\"cdk-overlay-1\"]/santa-vertical-modal/div/div/alliance-sidebar/aside/div[3]/a/santa-button/button/span");
+    private final By createCVButton = By.xpath("//body/div[1]/div[3]/div[1]/santa-vertical-modal[1]/div[1]/div[1]/alliance-sidebar[1]/aside[1]/div[3]/a[1]/santa-button[1]/button[1]/span[1]");
 
     public RecommendationsPage logOut() {
-        waitFor10.until(ExpectedConditions.visibilityOf(driver.findElement(logOutButton)));
         driver.findElement(logOutButton).click();
         return new RecommendationsPage(driver);
     }
 
-    public CreateCVMainInformationPage createCV(){
-        //waitFor10.until(ExpectedConditions.visibilityOf(driver.findElement(createCVButton)));
+    public CreateCVMainInformationPage createCV() {
+        waitFor10.until(ExpectedConditions.elementToBeClickable(driver.findElement(createCVButton)));
         driver.findElement(createCVButton).click();
         return new CreateCVMainInformationPage(driver);
     }

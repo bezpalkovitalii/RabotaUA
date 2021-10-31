@@ -9,10 +9,10 @@ public class MainPage extends BasePage {
         super(driver);
     }
 
-    private final By userButton = By.xpath("//div[contains(text(), 'Виталий Безпалко')]");
+    private final By userButton = By.xpath("//div[contains(text(),'Виталий Безпалко')]");
 
     public UserPage openUserPage() {
-        waitFor10.until(ExpectedConditions.visibilityOf(driver.findElement(userButton)));
+        waitFor10.until(ExpectedConditions.elementToBeClickable(driver.findElement(userButton)));
         driver.findElement(userButton).click();
         return new UserPage(driver);
     }
