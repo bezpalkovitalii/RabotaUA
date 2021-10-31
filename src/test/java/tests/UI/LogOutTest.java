@@ -4,10 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import pages.HomePage;
 
-
-public class LoginTest extends BaseTest {
-
-
+public class LogOutTest extends BaseTest {
     private HomePage homePage;
 
     @Before
@@ -17,10 +14,11 @@ public class LoginTest extends BaseTest {
     }
 
     @Test
-    public void checkLogin() {
-
+    public void checkLogOut() {
         homePage.openLoginPage()
-                .login(System.getProperty("username"), System.getProperty("password"));
+                .login(System.getProperty("username"), System.getProperty("password"))
+                .openUserPage()
+                .logOut();
     }
 
 }

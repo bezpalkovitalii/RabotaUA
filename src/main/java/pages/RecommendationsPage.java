@@ -6,4 +6,7 @@ public class RecommendationsPage extends BasePage{
     public RecommendationsPage(WebDriver driver) {
         super(driver);
     }
+
+
+
 }
